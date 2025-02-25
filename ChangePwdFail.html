@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Change Failed</title>
+</head>
+<body>
+    <h1>Password Change Failed</h1>
+    <p id="errorMessage"></p>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const error = urlParams.get('error');
+        if (error) {
+            document.getElementById('errorMessage').innerText = "Error: " + error;
+        }
+    </script>
+</body>
+</html>

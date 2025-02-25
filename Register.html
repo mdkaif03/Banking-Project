@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: rgb(255, 94, 77); /* RGB background */
+            background: linear-gradient(45deg, rgb(255, 94, 77), rgb(255, 215, 0)); /* Gradient background */
+            margin: 0;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9); /* White background with slight opacity */
+            border-radius: 10px;
+            padding: 30px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h4 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            font-weight: 600;
+        }
+
+        label {
+            font-size: 1.1em;
+            color: #555;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus {
+            outline: none;
+            border-color: rgb(255, 94, 77); /* Focus effect */
+        }
+
+        input[type="submit"] {
+            background-color: rgb(255, 94, 77);
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 1.1em;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: rgb(255, 215, 0); /* Hover effect */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+                width: 90%;
+            }
+
+            h4 {
+                font-size: 1.6em;
+            }
+
+            label {
+                font-size: 1em;
+            }
+
+            input[type="text"], input[type="password"] {
+                font-size: 1em;
+            }
+
+            input[type="submit"] {
+                padding: 12px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h4>Please fill all the details correctly</h4>
+        <form action="Register">
+            <label for="cname">Name of the Customer</label>
+            <input type="text" name="cname" id="cname" required><br>
+
+            <label for="email">Email of the Customer</label>
+            <input type="text" name="email" id="email" required><br>
+
+            <label for="phone">Phone Number of the Customer</label>
+            <input type="text" name="phone" id="phone" required><br>
+
+            <label for="cid">Preferred Customer ID</label>
+            <input type="text" name="cust_d" id="cust_d" required><br>
+            <label for="pwd">Preferred Password</label>
+            <input type="password" name="pwd" id="pwd" required><br>
+
+            <label for="balance">Starting Balance</label>
+            <input type="text" name="bal" id="bal" required><br>
+
+            
+
+            <input type="submit" value="Register">
+        </form>
+    </div>
+</body>
+</html>

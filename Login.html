@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<style>
+   
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        text-align: center;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+    }
+
+    h1 {
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        color: #555;
+        font-weight: bold;
+    }
+
+    input[type="text"], input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1em;
+        transition: border-color 0.3s;
+    }
+
+    input[type="text"]:focus, input[type="password"]:focus {
+        border-color: #4CAF50; /* Green border when focused */
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        padding: 12px;
+        background-color: #4CAF50; /* Green background */
+        color: white;
+        font-size: 1em;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049; /* Darker green on hover */
+    }
+
+    input[type="submit"]:active {
+        background-color: #3e8e41; /* Even darker green when clicked */
+    }
+</style>
+<script>
+    // Function to validate password strength
+    function validatePassword() {
+        const password = document.getElementById('pwd').value;
+        const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+]).{8,}$/;
+
+        if (!regex.test(password)) {
+            alert('Password must be at least 8 characters long, include one uppercase letter, one lowercase letter, one number, and one special character.');
+            return false;
+        }
+        return true;
+    }
+</script>
+</head>
+<body>
+    <div class="container">
+        <h1>Login Page</h1>
+        <form action="Login" method="post" onsubmit="return validatePassword()">
+            <label for="cid">Customer Id</label>
+            <input type="text" id="cid" name="cid" placeholder="Enter your customer id" required><br>
+
+            <label for="pwd">Password</label>
+            <input type="password" id="pwd" name="pwd" placeholder="Enter your password" required minlength="8"><br>
+
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</body>
+</html>
